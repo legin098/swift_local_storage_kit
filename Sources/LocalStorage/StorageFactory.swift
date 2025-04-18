@@ -8,7 +8,7 @@
 import Foundation
 
 public enum StorageFactory {
-    public static func makeStorage(config: StorageConfig) -> LocalStorage {
+    public static func makeStorage(config: StorageConfig = .init()) -> LocalStorage {
         if config.useInMemoryStorage {
             return InMemoryStorage()
         }
