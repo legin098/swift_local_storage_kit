@@ -27,3 +27,31 @@ If you're using the local version:
 1. Drag the package folder into your Xcode project
 2. Go to: **File > Add Packages...**
 3. Select "**Add local...**" and choose the folder where you package is located
+
+## 🚀 Getting Started
+
+1. **Basic usage**:
+
+   ```swift
+   let storage = StorageFactory.makeStorage()
+   ```
+
+   By default, this option uses UserDefaultsStorage as the storage engine.
+
+2. **Testing/ in-memory usage**:
+
+   **Explicit form**:
+
+   ```swift
+   let testStorage = StorageFactory.makeStorage(config: StorageConfig(useInMemoryStorage: true))
+   ```
+
+   You manually pass a `StorageConfig` with the option to use in-memory storage.
+
+   **Abbreviated form:**
+
+   ```swift
+   let memoryStorage = StorageFactory.makeStorage(config: .init(useInMemoryStorage: true))
+   ```
+
+   Swift infers the type, so .init(...) is a shorter equivalent.
